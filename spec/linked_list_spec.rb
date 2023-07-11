@@ -28,6 +28,13 @@ describe LinkedList do
     list.append("doop")
 
     expect(list.head.next_node).to eq(nil)
-    require 'pry';binding.pry
+  end
+#built in spec and pushed to repo
+# but still need to build count in the class file.
+  it "can count nodes" do
+    list = LinkedList.new
+    list.append("doop")
+
+    expect(list.count).to eq(1)
   end
 end
