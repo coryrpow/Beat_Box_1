@@ -9,12 +9,6 @@ describe LinkedList do
     expect(list).to be_an_instance_of(LinkedList)
     expect(list.head).to eq(nil)
   end
-  
-  it "adds a new piece of data" do
-    list = LinkedList.new
-    list.append("doop")
-
-  end
 
   it "adds data to head" do
     list = LinkedList.new
@@ -29,12 +23,29 @@ describe LinkedList do
 
     expect(list.head.next_node).to eq(nil)
   end
-#built in spec and pushed to repo
-# but still need to build count in the class file.
+
   it "can count nodes" do
     list = LinkedList.new
     list.append("doop")
 
     expect(list.count).to eq(1)
+  end
+
+  it "can list strings" do
+    list = LinkedList.new
+    list.append("doop")
+
+    expect(list.to_string).to eq("doop")
+  end
+
+  it "can add a second node" do
+    list = LinkedList.new
+    list.append("doop")
+    list.append("deep")
+
+    expect(list.head.data).to eq("doop")
+    expect(list.head.next_node.data).to eq("deep")
+    expect(list.count).to eq(2)
+    expect(list.to_string).to eq("doop deep")
   end
 end
